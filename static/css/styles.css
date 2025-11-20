@@ -1,0 +1,22 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+}
+
+header{
+    background: #3232c8;
+    padding: 15px;
+    color: white;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.container{
+    padding: 20px;
+}
