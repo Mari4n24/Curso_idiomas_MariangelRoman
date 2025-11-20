@@ -3,5 +3,5 @@ from inicio.views import *
 
 urlpatterns = [
     path('', inicio, name='inicio'),
-    path('about/', about, name='about'),
+    path('inicio/about', about, name='about'),
 ]
