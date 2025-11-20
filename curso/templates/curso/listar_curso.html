@@ -5,6 +5,7 @@
 {% block content %}
 
 <h1>Listado de Cursos</h1>
+<p><a href="{% url 'crear_curso' %}">Crear nuevo curso</a></p>
 
 {% if cursos %}
     <ul>
@@ -16,6 +17,7 @@
         </li>
         {% endfor %}
     </ul>
+    
 {% else %}
     <p>No hay cursos cargados.</p>
 {% endif %}
