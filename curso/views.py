@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, UpdateView, DeleteView
 from .models import Curso
 
 def listar_cursos(request):
@@ -21,3 +24,18 @@ def crear_curso(request):
         return redirect('listar_cursos')
 
     return render(request, 'curso/crear_curso.html')
+
+class CursoDetalleView(DetailView):
+    model = Curso
+    template_name = 'curso/detalle_curso.html'
+
+class CursoEditarView(LoginRequiredMixin, UpdateView):
+    model = Curso
+    fields = ['idioma', 'nivel', 'imagen']
+    template_name = 'curso/editar_curso.html'
+    success_url = reverse_lazy('listar_cursos')
+
+class CursoBorrarView(LoginRequiredMixin, DeleteView):
+    model = Curso
+    template_name = 'curso/borrar_curso.html'
+    success_url = reverse_lazy('listar_cursos')

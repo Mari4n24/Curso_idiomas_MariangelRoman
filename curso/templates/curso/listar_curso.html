@@ -11,9 +11,13 @@
     <ul>
         {% for curso in cursos %}
         <li>
-            {{ curso.nombre }} - {{ curso.idioma}} - {{ curso.nivel }} - {{ curso.profesor }}
+            <a href="{% url 'detalle_curso' curso.id %}">
+                {{ curso.nombre }} - {{ curso.idioma}} - {{ curso.nivel }} - {{ curso.profesor }}
                 <br>
+            </a>
+            {% if curso.imagen %}
                 <img src="{{ curso.imagen.url }}" width="200">
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
