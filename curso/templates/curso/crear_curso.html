@@ -2,11 +2,10 @@
 
 <form method="post" enctype="multipart/form-data" >
     {% csrf_token %}
-    Nombre: <input type="text" name="nombre"><br>
     Idioma: <input type="text" name="idioma"><br>
     Nivel: <input type="text" name="nivel"><br>
     Imagen: <input type="file" name="imagen"><br>
     <input type="submit" value="Crear Curso">
 </form>
 
-<a href="{% url "listar_cursos" %}">Volver al listado</a>
+<a href="{% url 'listar_cursos' %}">Volver al listado</a>
