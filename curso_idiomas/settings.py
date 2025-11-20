@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inicio',
+    'curso',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'curso_idiomas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'inicio' / 'templates'],
+        'DIRS': [BASE_DIR / 'inicio' / 'curso' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
