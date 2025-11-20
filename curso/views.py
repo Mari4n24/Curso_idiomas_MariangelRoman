@@ -3,4 +3,4 @@ from .models import Curso
 
 def listar_cursos(request):
     cursos = Curso.objects.all()
-    return render(request, 'curso/listar_cursos.html', {'cursos': cursos})
+    return render(request, 'curso/listar_curso.html', {'cursos': cursos})
