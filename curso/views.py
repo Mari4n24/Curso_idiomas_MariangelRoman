@@ -10,14 +10,12 @@ def crear_curso(request):
         nombre = request.POST['nombre']
         idioma = request.POST['idioma']
         nivel = request.POST['nivel']
-        profesor = request.POST['profesor']
         imagen = request.FILES.get('imagen')
         
         Curso.objects.create(
             nombre=nombre,
             idioma=idioma,
             nivel=nivel,
-            profesor=profesor,
             imagen=imagen
         )
         
