@@ -2,8 +2,9 @@
 
 <form method="post">
     {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
     {{form.as_p}}
     <button type="submit">Registrarme</button>
 </form>
 
-<a href="{% url "login" %}">Ya tengo cuenta</a>
+<a href="{% url 'login' %}">Ya tengo cuenta</a>

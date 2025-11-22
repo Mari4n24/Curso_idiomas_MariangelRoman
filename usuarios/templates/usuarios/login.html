@@ -4,10 +4,10 @@
 
 <form method="post">
     {% csrf_token %}
-    <input type="hideen" name="next" value="{{ request.GET.next }}">
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
     <input type="text" name="username" placeholder="Usuario" required><br>
-    <input type="text" name="password" placeholder="Contraseña" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
     <button type="submit">Entrar</button>
 </form>
 
-<a href="{% url "registro" %}">Registrarse</a>
+<a href="{% url 'registro' %}">Registrarse</a>
