@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView, UpdateView, DeleteView
 from .models import Curso
 
+@login_required
 def listar_cursos(request):
     cursos = Curso.objects.all()
     return render(request, 'curso/listar_curso.html', {'cursos': cursos})
 
 
+@login_required 
 def crear_curso(request):
     if request.method == 'POST':
         idioma = request.POST.get('idioma')
