@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from .forms import RegistroUsuarioForm
+from django.utils.http import url_has_allowed_host_and_scheme
 
 def registro(request):
     if request.method == 'POST':
@@ -9,9 +10,12 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('inicio')
-        else:
-            form = RegistroUsuarioForm()
+            next_url = request.POST.get('next') or request.GET.get('next')
+            if next_url and url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}):
+                return redirect(next_url)
+            return redirect('listar_cursos')
+    else:
+        form = RegistroUsuarioForm()
     return render(request, 'usuarios/registro.html', {'form': form})
 
 
@@ -19,10 +23,13 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+        next_url = request.POST.get('next') or request.GET.get('next')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('inicio')
+            if next_url and url_has_allowed_host_and_scheme(next_url, allowed_hosts={request.get_host()}):
+                return redirect(next_url)
+            return redirect('listar_cursos')
         else:
             error = 'Usuario o contraseña incorrectos'
             return render(request, 'usuarios/login.html', {'error': error})
