@@ -1,0 +1,10 @@
+<h2>¿Seguro que querés borrar este curso?</h2>
+
+<p>{{ object.idioma }} - {{ object.nivel }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+</form>
+
+<a href="{% url 'listar_cursos' %}">Cancelar</a>

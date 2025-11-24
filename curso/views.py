@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView, UpdateView, DeleteView
@@ -28,7 +29,7 @@ def crear_curso(request):
 
     return render(request, 'curso/crear_curso.html')
 
-class CursoDetalleView(DetailView):
+class CursoDetalleView(LoginRequiredMixin,DetailView):
     model = Curso
     template_name = 'curso/detalle_curso.html'
 
