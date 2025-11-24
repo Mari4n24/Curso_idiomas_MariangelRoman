@@ -14,7 +14,17 @@
         <nav>
             <a href="{% url "inicio" %}">Inicio</a>
             <a href="{% url "about" %}">About</a>
-            <a href="{% url "listar_cursos" %}">Cursos</a>
+            <!-- Zona Condicional para Usuarios -->
+            {% if user.is_authenticated %}
+                <!-- Visible solo si está logueado -->
+                <a href="{% url "listar_cursos" %}">Cursos</a>
+                <!-- Asumo que tienes un 'logout' view name -->
+                
+            {% else %}
+                <!-- Visible si NO está logueado -->
+                <a href="{% url 'login_view' %}">Iniciar Sesión</a>
+                <a href="{% url 'registro' %}">Registrarse</a>
+            {% endif %}
         </nav>
     </header>
 
