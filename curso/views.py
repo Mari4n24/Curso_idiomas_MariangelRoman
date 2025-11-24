@@ -54,7 +54,7 @@ class CursoBorrarView(LoginRequiredMixin, DeleteView):
 def listar_alumnos(request):
     alumnos = Alumno.objects.all()
     mensaje = 'No hay alumnos cargados' if not alumnos else ''
-    return render(request, 'curso/listar_alumno.html', {'alumnos': alumnos, 'mensaje': mensaje})
+    return render(request, 'curso/listar_alumnos.html', {'alumnos': alumnos, 'mensaje': mensaje})
 
 @login_required
 def crear_alumno(request):
@@ -72,7 +72,7 @@ def crear_alumno(request):
 def listar_profesores(request):
     profesores = Profesor.objects.all()
     mensaje = 'No hay profesores cargados' if not profesores else ''
-    return render(request, 'curso/listar_profesor.html', {'profesores': profesores, 'mensaje': mensaje})    
+    return render(request, 'curso/listar_profesores.html', {'profesores': profesores, 'mensaje': mensaje})    
 
 @login_required
 def crear_profesor(request):
