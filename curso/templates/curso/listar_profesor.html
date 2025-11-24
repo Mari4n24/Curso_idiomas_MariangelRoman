@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Profesores{% endblock title %}
+
+{% block content %}
+<h1>Listado de Profesores</h1>
+<p>
+    <a href="{% url "crear_profesores" %}"></a>
+</p>
+{% endblock content %}
+
+{% if profesores %}
+<ul>
+    {% for prof in profesores %}
+    <li>
+        {{ prof.nombre }} - Especialidad: {{ prof.especialidad }}
+        {% if prof.cursos.all %}
+        <br>Cursos:
+        {% for c in prof.cursos.all %}
+            {{c.idioma}} ({{c.nivel}})
+            {% if not forloop.last %},{% endif %}
+        {% endfor %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>{{ mensaje }}</p>
+{% endif %}
