@@ -5,6 +5,12 @@
 {% block content %}
 
 <h1>Listado de Cursos</h1>
+
+<form action="" method="get">
+    <input type="text" name="buscar" placeholder="Buscar curso" value="{{ request|default:"" }}">
+    <button type="submit">Buscar</button>
+</form>
+
 <p><a href="{% url 'crear_curso' %}">Crear nuevo curso</a></p>
 
 {% if cursos %}
