@@ -5,8 +5,12 @@
 {% block content %}
 <h1>Listado de Alumnos</h1>
 <p>
-    <a href="{% url "crear_alumnos" %}"></a>        
+    <a href="{% url "crear_alumno" %}"></a>        
 </p>
+
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% endif %}
 
 {% if alumnos %}
 
