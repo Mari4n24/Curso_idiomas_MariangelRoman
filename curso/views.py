@@ -10,7 +10,7 @@ from .forms import CursoForm, AlumnoForm, ProfesorForm
 
 @login_required
 def listar_cursos(request):
-    query = request.GET.get('q')
+    query = request.GET.get('buscar')
     if query:
         cursos = Curso.objects.filter(idioma__icontains=query)
         mensaje = 'o se encontraron cursos' if not cursos else ''
