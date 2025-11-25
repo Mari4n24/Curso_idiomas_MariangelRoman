@@ -1,6 +1,15 @@
-{% extends "base.html" %}
-{% block title %}Inicio{% endblock title %}
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block title %} Inicio {% endblock title %} 
+
 {% block content %}
+
 <h1>Bienvenido al curso de Idiomas</h1>
 <p>Aprende idiomas de manera divertida y práctica</p>
-{% endblock %}
+
+<img src="{% static 'media/cursos/aprende_lenguajes.jpeg' %}" alt="Imagen curso" style="max-width: 400px; width: 100%"
+/>
+
+{% endblock content %}
