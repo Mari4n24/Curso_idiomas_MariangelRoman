@@ -16,18 +16,14 @@
 
 .inicio-img-container img {
     width: 100%;
-    max-width: 800px !important;  /* AGRANDA y achica la imagen */
+    max-width: 800px !important;  
     height: auto;
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 5px 25px rgba(0,0,0,0.15);
 }
 
-
-
-
 /* ABOUT */
-
 .about-section {
     padding: 4rem 0;
 }
