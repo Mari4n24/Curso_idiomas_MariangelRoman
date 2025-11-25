@@ -1,6 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}About me{% endblock title %}
+
 {% block content %}
-<h1>About me</h1>   
-<p>Esta es la página sobre mí</p>
-{% endblock  %}
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- FOTO -->
+        <div class="about-photo">
+            <img src="{% static 'media/cursos/mariangel.jpg' %}" alt="Foto personal">
+        </div>
+
+        <!-- TEXTO -->
+        <div class="about-text">
+            <h1>Sobre mí</h1>
+            <p>
+                ¡Hola! Soy Mariangel, una estudiante apasionada por los idiomas, la enseñanza y la programación. Actualmente me estoy formando como profesora de inglés y también aprendiendo desarrollo web, incluyendo HTML, CSS, Bootstrap y Django.
+            </p>
+
+            <h2>Mi historia</h2>
+            <p>
+                Nací en Venezuela y llegué a Argentina a los 11 años. Conocer nuevas culturas despertó en mí una enorme curiosidad por aprender, adaptarme y seguir creciendo académicamente.
+            </p>
+
+            <h2>Intereses</h2>
+            <p>
+                Me encantan el inglés, la literatura fantástica, la música y cocinar dulces. También disfruto aprender programación porque me permite crear cosas nuevas y resolver problemas de forma creativa.
+            </p>
+
+            <h2>Más sobre mí</h2>
+            <p>
+                Formo parte de los Scouts, donde desarrollé trabajo en equipo, liderazgo y 
+                responsabilidad. Estas experiencias influyeron mucho en mi forma de ver el 
+                aprendizaje y el crecimiento personal.
+            </p>
+
+        </div>
+    </div>
+</section>
+{% endblock content %}
