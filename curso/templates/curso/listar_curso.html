@@ -19,36 +19,36 @@
 
 <div class="courses-container">
 
-{% if cursos %}
-    {% for curso in cursos %}
-        <!-- Cambiado a la clase correcta del CSS -->
-        <div class="course-card">
+    {% if cursos %}
+        {% for curso in cursos %}
+        
+            <div class="course-card">
 
-            <a href="{% url 'detalle_curso' curso.id %}">
-                <h3>{{ curso.nombre }}</h3>
-            </a>
+                <a href="{% url 'detalle_curso' curso.id %}">
+                    <h3>{{ curso.nombre }}</h3>
+                </a>
 
-            <p class="curso-info">
-                {{ curso.idioma }} — Nivel: {{ curso.nivel }}
-            </p>
+                <p class="curso-info">
+                    {{ curso.idioma }} — Nivel: {{ curso.nivel }}
+                </p>
 
-            {% if curso.imagen %}
-                <!-- Clase correcta -->
-                <img src="{{ curso.imagen.url }}" alt="Imagen del curso">
-            {% endif %}
+                {% if curso.imagen %}
+                
+                    <img src="{{ curso.imagen.url }}" alt="Imagen del curso">
+                {% endif %}
 
-            <!-- Clase correcta -->
-            <div class="course-actions">
-                <a href="{% url 'editar_curso' curso.id %}" class="btn-edit">Editar</a>
-                <a href="{% url 'borrar_curso' curso.id %}" class="btn-delete">Borrar</a>
+            
+                <div class="course-actions">
+                    <a href="{% url 'editar_curso' curso.id %}" class="btn-edit">Editar</a>
+                    <a href="{% url 'borrar_curso' curso.id %}" class="btn-delete">Borrar</a>
+                </div>
+
             </div>
+        {% endfor %}
 
-        </div>
-    {% endfor %}
-
-{% else %}
-    <p class="no-cursos">No hay cursos cargados.</p>
-{% endif %}
+    {% else %}
+        <p class="no-cursos">No hay cursos cargados.</p>
+    {% endif %}
 </div>
 
 {% endblock content %}
