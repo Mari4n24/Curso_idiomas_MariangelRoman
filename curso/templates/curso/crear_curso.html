@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>Crear curso</h1>
 
 <form method="post" enctype="multipart/form-data" >
@@ -9,3 +13,5 @@
 </form>
 
 <a href="{% url 'listar_cursos' %}">Volver al listado</a>
+
+{% endblock content %}
