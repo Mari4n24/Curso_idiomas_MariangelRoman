@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}Registrarse{% endblock title %}
+
+{% block content %}
+
 <h2>Registro</h2>
 
 <form method="post">
@@ -10,3 +14,5 @@
 </form>
 
 <a href="{% url 'login' %}">Ya tengo cuenta</a>
+
+{% endblock content %}
