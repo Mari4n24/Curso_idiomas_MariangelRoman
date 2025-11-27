@@ -186,16 +186,6 @@
     background: #e74c3c;
 }
 
-/* .login-box {
-    width: 350px;
-    margin: 0 auto;
-    background: #79aadc;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
-    text-align: center;
-} */
-
 /* Login */
 .login-container {
     display: flex;
@@ -288,14 +278,12 @@
 
 /* Registrarse */
 
-/* Contenedor centrado */
 .register-container {
     display: flex;
     justify-content: center;
     padding: 3rem 0;
 }
 
-/* Caja principal */
 .register-box {
     width: 420px;
     background: #ffffff;
@@ -305,7 +293,6 @@
     font-family: "Segoe UI", sans-serif;
 }
 
-/* Títulos */
 .title {
     font-size: 1.9rem;
     font-weight: 700;
@@ -317,19 +304,16 @@
     margin-bottom: 2rem;
 }
 
-/* Form groups */
 .form-group {
     margin-bottom: 1.6rem;
 }
 
-/* Labels */
 .form-group label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #3d7cc9;
 }
 
-/* Inputs */
 .form-group input {
     width: 100%;
     border: none;
@@ -344,7 +328,6 @@
     border-bottom-color: #3d7cc9;
 }
 
-/* Texto de ayuda */
 .help {
     display: block;
     font-size: 0.75rem;
@@ -352,14 +335,12 @@
     margin-top: 3px;
 }
 
-/* Errores */
 .error {
     color: #c62828;
     font-size: 0.85rem;
     margin-top: 4px;
 }
 
-/* Botón */
 .btn-register {
     width: 100%;
     padding: 12px;
@@ -377,7 +358,6 @@
     background: #2d6caf;
 }
 
-/* Enlace al login */
 .login-text {
     text-align: center;
     margin-top: 1.5rem;
