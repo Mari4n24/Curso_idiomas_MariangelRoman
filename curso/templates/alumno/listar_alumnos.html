@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Alumnos{% endblock title %}
+
+{% block content %}
+<h1>Listado de Alumnos</h1>
+
+<p class="text-muted">
+    Aquí podés ver la lista de alumnos que forman parte del curso.  
+    Esta sección te permite revisar rápidamente quiénes están registrados.
+</p>
+
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% endif %}
+
+{% if alumnos %}
+    <ul>
+        {% for alumno in alumnos %}
+        <li>
+            <strong>{{ alumno.nombre }} {{ alumno.apellido }}</strong>  
+            — Email: {{ alumno.email }}
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p class="text-muted mt-3">Todavía no hay alumnos cargados en el sistema.</p>
+{% endif %}
+
+{% endblock content %}

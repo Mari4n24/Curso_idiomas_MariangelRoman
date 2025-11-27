@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView, UpdateView, DeleteView
@@ -46,14 +46,13 @@ class CursoBorrarView(LoginRequiredMixin, DeleteView):
     model = Curso
     template_name = 'curso/borrar_curso.html'
     success_url = reverse_lazy('listar_cursos')
-
+    
 # Alumnos
-
 @login_required
 def listar_alumnos(request):
     alumnos = Alumno.objects.all()
     mensaje = 'No hay alumnos cargados' if not alumnos else ''
-    return render(request, 'curso/listar_alumnos.html', {'alumnos': alumnos, 'mensaje': mensaje})
+    return render(request, 'alumno/listar_alumnos.html', {'alumnos': alumnos, 'mensaje': mensaje})
 
 @login_required
 def crear_alumno(request):
@@ -64,14 +63,37 @@ def crear_alumno(request):
             return redirect('listar_alumnos')
     else:
         form = AlumnoForm()
-    return render(request, 'curso/crear_alumno.html', {'form': form})
+    return render(request, 'alumno/crear_alumno.html', {'form': form})
+
+@login_required
+def editar_alumno(request, pk):
+    alumno = get_object_or_404(Alumno, pk=pk)
+    form = AlumnoForm(request.POST or None, instance=alumno)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_alumnos')
+
+    return render(request, 'alumno/editar_alumno.html', {'form': form})
+
+@login_required
+def borrar_alumno(request, pk):
+    alumno = get_object_or_404(Alumno, pk=pk)
+
+    if request.method == 'POST':
+        alumno.delete()
+        return redirect('listar_alumnos')
+
+    return render(request, 'alumno/borrar_alumno.html', {'alumno': alumno})
+
+
 
 # Profesores
 @login_required
 def listar_profesores(request):
     profesores = Profesor.objects.all()
     mensaje = 'No hay profesores cargados' if not profesores else ''
-    return render(request, 'curso/listar_profesores.html', {'profesores': profesores, 'mensaje': mensaje})    
+    return render(request, 'profesor/listar_profesores.html', {'profesores': profesores, 'mensaje': mensaje})    
 
 @login_required
 def crear_profesor(request):
@@ -82,4 +104,25 @@ def crear_profesor(request):
             return redirect('listar_profesores')
     else:
         form = ProfesorForm()
-    return render(request, 'curso/crear_profesor.html', {'form': form})
+    return render(request, 'profesor/crear_profesor.html', {'form': form})
+
+@login_required
+def editar_profesor(request, pk):
+    profesor = get_object_or_404(Profesor, pk=pk)
+    form = ProfesorForm(request.POST or None, instance=profesor)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_profesores')
+
+    return render(request, 'profesor/editar_profesor.html', {'form': form})
+
+@login_required
+def borrar_profesor(request, pk):
+    profesor = get_object_or_404(Profesor, pk=pk)
+
+    if request.method == 'POST':
+        profesor.delete()
+        return redirect('listar_profesores')
+
+    return render(request, 'profesor/borrar_profesor.html', {'profesor': profesor})
