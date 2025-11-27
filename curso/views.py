@@ -39,7 +39,6 @@ class CursoDetalleView(LoginRequiredMixin,DetailView):
 class CursoEditarView(LoginRequiredMixin, UpdateView):
     model = Curso
     form_class = CursoForm
-    fields = ['idioma', 'nivel', 'imagen']
     template_name = 'curso/editar_curso.html'
     success_url = reverse_lazy('listar_cursos')
 
