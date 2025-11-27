@@ -185,3 +185,210 @@
 .btn-delete {
     background: #e74c3c;
 }
+
+/* .login-box {
+    width: 350px;
+    margin: 0 auto;
+    background: #79aadc;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    text-align: center;
+} */
+
+/* Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.login-box {
+    width: 380px;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    font-family: "Segoe UI", sans-serif;
+    text-align: left;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.login-box label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3d7cc9;
+    margin-top: 1rem;
+}
+
+.login-box input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #89c3f8;
+    padding: 8px 0;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.login-box input:focus {
+    border-bottom-color: #3d7cc9;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #3d7cc9;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-login:hover {
+    background: #2d6caf;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register-text a {
+    color: #2d6caf;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #c62828;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Registrarse */
+
+/* Contenedor centrado */
+.register-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+/* Caja principal */
+.register-box {
+    width: 420px;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Títulos */
+.title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 1.6rem;
+}
+
+/* Labels */
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3d7cc9;
+}
+
+/* Inputs */
+.form-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #89c3f8;
+    padding: 8px 0;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.form-group input:focus {
+    border-bottom-color: #3d7cc9;
+}
+
+/* Texto de ayuda */
+.help {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 3px;
+}
+
+/* Errores */
+.error {
+    color: #c62828;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* Botón */
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background: #3d7cc9;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+    margin-top: 1rem;
+}
+
+.btn-register:hover {
+    background: #2d6caf;
+}
+
+/* Enlace al login */
+.login-text {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.login-text a {
+    color: #2d6caf;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}

@@ -4,25 +4,35 @@
 
 {% block content %}
 
-<h2>Login</h2>
+<div class="login-container">
+    <div class="login-box">
 
-{% if error %}
-<p>{{error}}</p>
-{% endif %}
+        <h1 class="title">¿Listo para seguir aprendiendo un nuevo idioma?</h1>
+        <p class="subtitle">Inicia sesión para seguir donde lo dejaste.</p>
 
-<form method="post">
-  {% csrf_token %}
-  <input type="hidden" name="next" value="{{ request.GET.next }}" />
-  <input type="text" name="username" placeholder="Usuario" required /><br />
-  <input
-  type="password"
-  name="password"
-  placeholder="Contraseña"
-  required
-  /><br />
-  <button type="submit">Entrar</button>
-</form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
 
-<a href="{% url 'registro' %}">Registrarse</a>
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+
+            <label>Usuario</label>
+            <input type="text" name="username" required>
+
+            <label>Contraseña</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+
+        <p class="register-text">
+            ¿No tenés cuenta?
+            <a href="{% url 'registro' %}">Registrate aquí</a>
+        </p>
+
+    </div>
+</div>
 
 {% endblock content %}
