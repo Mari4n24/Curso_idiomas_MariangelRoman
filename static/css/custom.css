@@ -178,6 +178,10 @@
     text-decoration: none;
 }
 
+.btn-detail {
+    background: #00ff1a !important;
+}
+
 .btn-edit {
     background: #4234db;
 }
@@ -185,6 +189,77 @@
 .btn-delete {
     background: #e74c3c;
 }
+
+/* Detalle de cursos */
+
+.detalle-curso-container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.titulo-curso-detalle {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.detalle-info-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.detalle-curso-imagen {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.detalle-textos {
+    flex: 1;
+}
+
+.descripcion-curso {
+    margin-top: 5px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.detalle-acciones {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-volver, .btn-edit, .btn-delete {
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-volver {
+    background-color: #6c757d;
+}
+
 
 /* Login */
 .login-container {

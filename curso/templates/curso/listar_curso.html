@@ -39,6 +39,7 @@
 
             
                 <div class="course-actions">
+                    <a href="{% url "detalle_curso" curso.id %}" class="btn-detail">Detalle</a>
                     <a href="{% url 'editar_curso' curso.id %}" class="btn-edit">Editar</a>
                     <a href="{% url 'borrar_curso' curso.id %}" class="btn-delete">Borrar</a>
                 </div>

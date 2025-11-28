@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle del Curso{% endblock title %}
+
+{% block content %}
+
+<h1 class="titulo-curso-detalle">{{ curso.nombre }}</h1>
+
+<div class="detalle-curso-container">
+
+    <div class="detalle-info-card">
+
+        {% if curso.imagen %}
+            <img src="{{ curso.imagen.url }}" alt="Imagen del curso" class="detalle-curso-imagen">
+        {% endif %}
+
+        <div class="detalle-textos">
+
+            <p><strong>Idioma:</strong> {{ curso.idioma }}</p>
+            <p><strong>Nivel:</strong> {{ curso.nivel }}</p>
+
+            <hr>
+
+            <h3>Descripción del curso</h3>
+            <p class="descripcion-curso">
+            {{ curso.descripcion|linebreaks|default:"No hay una descripción disponible." }}
+    </p>
+
+</div>
+
+
+    </div>
+
+    <div class="detalle-acciones">
+        <a href="{% url 'editar_curso' curso.id %}" class="btn-edit">Editar</a>
+        <a href="{% url 'borrar_curso' curso.id %}" class="btn-delete">Borrar</a>
+        <a href="{% url 'listar_cursos' %}" class="btn-volver">Volver</a>
+    </div>
+
+</div>
+
+{% endblock content %}

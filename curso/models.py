@@ -4,6 +4,7 @@ class Curso(models.Model):
     nivel = models.CharField(max_length=20)
     idioma = models.CharField(max_length=20)
     imagen = models.ImageField(upload_to='cursos', null=True, blank=True)
+    descripcion = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.idioma} - {self.nivel}'
