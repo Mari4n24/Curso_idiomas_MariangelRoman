@@ -372,6 +372,80 @@
     margin-top: 20px;
 }
 
+/* Profesor */
+
+.titulo-profesores {
+text-align: center;
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.descripcion-profesores {
+text-align: center;
+margin-bottom: 30px;
+color: #666;
+}
+
+.grid-profesores {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.profesor-card {
+background: #ffffff;
+padding: 20px;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+transition: transform .2s ease;
+}
+
+.profesor-card:hover {
+transform: translateY(-4px);
+}
+
+.profesor-icono {
+font-size: 2.5rem;
+color: #0d6efd;
+margin-bottom: 10px;
+}
+
+.cursos-profesor {
+font-size: 0.95rem;
+color: #555;
+margin-top: 5px;
+}
+
+.form-profesor {
+max-width: 600px;
+margin: 2rem auto 0;
+background: white;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-profesor form p {
+margin-bottom: 15px;
+}
+
+.btn-guardar-profesor {
+background-color: #198754;
+color: white;
+padding: 10px 18px;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+}
+
+.btn-guardar-profesor:hover {
+background-color: #157347;
+}
+
 
 /* Login */
 .login-container {

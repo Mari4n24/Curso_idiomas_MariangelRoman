@@ -30,9 +30,10 @@
                         <strong>Email:</strong> {{ alumno.email }}
                     </p>
 
-                    {% if curso.imagen %}
-                        <img src="{{ curso.alumno.url }}" alt="Imagen del alumno">
+                    {% if alumno.foto %}
+                        <img src="{{ alumno.foto }}" alt="Foto de {{ alumno.nombre }}" class="alumno-foto">
                     {% endif %}
+
 
                     <div class="alumno-actions">
                         <a href="{% url 'editar_alumno' alumno.id %}" class="btn-edit">Editar</a>

@@ -6,13 +6,14 @@
 
 <h1>Crear profesor</h1>
 
-<form method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type='submit'>
-        Crear Profesor
-    </button>
-</form>
+<h2 class="titulo-profesores" >Crear Profesor</h2>
+<div class="form-profesor">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-guardar-profesor">Crear Profesor</button>
+    </form>
+</div>
 
 <a href="{% url "listar_profesores" %}"></a>
 
