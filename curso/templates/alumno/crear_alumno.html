@@ -1,20 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Crear Alumno{% endblock title %}
-
 {% block content %}
 
 <h1>Crear Alumno</h1>
 
-<form method='post'>
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type='submit'>
-        Crear Alumno
-    </button>
+    Nombre: <input type="text" name="nombre"><br>
+    Apellido: <input type="text" name="apellido"><br>
+    Email: <input type="text" name="email"><br>
+    Imagen: <input type="file" name="imagen"><br>
+    <input type="submit" value="Crear Alumno">
 </form>
 
 <a href="{% url 'listar_alumnos' %}">Volver al listado</a>
 
 {% endblock content %}
-

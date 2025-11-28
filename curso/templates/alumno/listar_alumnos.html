@@ -3,28 +3,49 @@
 {% block title %}Listado de Alumnos{% endblock title %}
 
 {% block content %}
-<h1>Listado de Alumnos</h1>
 
-<p class="text-muted">
-    Aquí podés ver la lista de alumnos que forman parte del curso.  
-    Esta sección te permite revisar rápidamente quiénes están registrados.
-</p>
+<h1 class="titulo-alumnos">Listado de Alumnos</h1>
 
-{% if mensaje %}
-    <p>{{ mensaje }}</p>
-{% endif %}
+<div class="buscador-crear-container">
 
-{% if alumnos %}
-    <ul>
-        {% for alumno in alumnos %}
-        <li>
-            <strong>{{ alumno.nombre }} {{ alumno.apellido }}</strong>  
-            — Email: {{ alumno.email }}
-        </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p class="text-muted mt-3">Todavía no hay alumnos cargados en el sistema.</p>
-{% endif %}
+    <p class="crear-curso">  
+        <a href="{% url 'crear_alumno' %}" class="btn-crear">Crear nuevo alumno</a>
+    </p>
+</div>
+
+<div class="contenedor-alumnos">
+
+    {% if alumnos %}
+        <div class="grid-alumnos">
+            {% for alumno in alumnos %}
+                <div class="alumno-card">
+                    
+                    <div class="alumno-icono">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <h3>{{ alumno.nombre }} {{ alumno.apellido }}</h3>
+
+                    <p class="email-alumno">
+                        <strong>Email:</strong> {{ alumno.email }}
+                    </p>
+
+                    {% if curso.imagen %}
+                        <img src="{{ curso.alumno.url }}" alt="Imagen del alumno">
+                    {% endif %}
+
+                    <div class="alumno-actions">
+                        <a href="{% url 'editar_alumno' alumno.id %}" class="btn-edit">Editar</a>
+                        <a href="{% url 'borrar_alumno' alumno.id %}" class="btn-delete">Borrar</a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-muted mt-4 text-center">Todavía no hay alumnos cargados en el sistema.</p>
+    {% endif %}
+
+</div>
 
 {% endblock content %}

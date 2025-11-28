@@ -57,7 +57,7 @@ def listar_alumnos(request):
 @login_required
 def crear_alumno(request):
     if request.method == 'POST':
-        form = AlumnoForm(request.POST)
+        form = AlumnoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('listar_alumnos')
@@ -68,7 +68,8 @@ def crear_alumno(request):
 @login_required
 def editar_alumno(request, pk):
     alumno = get_object_or_404(Alumno, pk=pk)
-    form = AlumnoForm(request.POST or None, instance=alumno)
+    form = AlumnoForm(request.POST or None, request.FILES or None, instance=alumno)
+
 
     if form.is_valid():
         form.save()
@@ -98,7 +99,7 @@ def listar_profesores(request):
 @login_required
 def crear_profesor(request):
     if request.method == 'POST':
-        form = ProfesorForm(request.POST)
+        form = ProfesorForm(request.POST, request.FIELD)
         if form.is_valid():
             form.save()
             return redirect('listar_profesores')
@@ -109,7 +110,7 @@ def crear_profesor(request):
 @login_required
 def editar_profesor(request, pk):
     profesor = get_object_or_404(Profesor, pk=pk)
-    form = ProfesorForm(request.POST or None, instance=profesor)
+    form = ProfesorForm(request.POST or None, request.FILES or None, instance=profesor)
 
     if form.is_valid():
         form.save()
