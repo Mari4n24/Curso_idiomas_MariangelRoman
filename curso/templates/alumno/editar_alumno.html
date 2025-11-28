@@ -1,21 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Editar Alumno{% endblock title %}
 
 {% block content %}
 
-<h1 class="titulo-form">Editar Alumno</h1>
+<h2 class="editar-curso-titulo">Editar Alumno</h2>
 
-<div class="form-card">
-    <form method="post">
-        {% csrf_token %}
+<form method="post" enctype="multipart/form-data" class="editar-curso-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-editar-curso">Guardar cambios</button>
+</form>
 
-        {{ form.as_p }}
+<a href="{% url 'listar_cursos' %}" class="volver-editar-curso">Volver</a>
 
-        <div class="acciones-form">
-            <button type="submit" class="btn-guardar">Guardar cambios</button>
-            <a href="{% url 'listar_alumnos' %}" class="btn-volver">Cancelar</a>
-        </div>
-    </form>
-</div>
-
-{% endblock content %}
+{% endblock %}

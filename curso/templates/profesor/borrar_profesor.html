@@ -1,0 +1,25 @@
+    {% extends "base.html" %}
+{% block title %}Eliminar Profesor{% endblock title %}
+
+{% block content %}
+
+<h1 class="titulo-form">Eliminar Profesor</h1>
+
+<div class="form-card">
+
+    <p class="text-center">
+        ¿Estás segura/o que querés eliminar a  
+        <strong>{{ profesor.nombre }}</strong>?
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="acciones-form">
+            <button type="submit" class="btn-delete">Eliminar</button>
+            <a href="{% url 'listar_alumnos' %}" class="btn-volver">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

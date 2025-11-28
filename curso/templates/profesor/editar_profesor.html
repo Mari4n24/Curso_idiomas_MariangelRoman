@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="editar-curso-titulo">Editar Profesor</h2>
+
+<form method="post" enctype="multipart/form-data" class="editar-curso-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-editar-curso">Guardar cambios</button>
+</form>
+
+<a href="{% url 'listar_cursos' %}" class="volver-editar-curso">Volver</a>
+
+{% endblock %}
