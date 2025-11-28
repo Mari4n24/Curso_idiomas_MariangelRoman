@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 <h1>Crear curso</h1>
-
 <form method="post" enctype="multipart/form-data" >
     {% csrf_token %}
     Idioma: <input type="text" name="idioma"><br>
@@ -11,7 +8,5 @@
     Imagen: <input type="file" name="imagen"><br>
     <input type="submit" value="Crear Curso">
 </form>
-
 <a href="{% url 'listar_cursos' %}">Volver al listado</a>
-
 {% endblock content %}

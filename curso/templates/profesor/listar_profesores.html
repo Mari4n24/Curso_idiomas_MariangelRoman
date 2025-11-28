@@ -1,36 +1,24 @@
 {% extends "base.html" %}
-
 {% block title %}Listado de Profesores{% endblock title %}
-
 {% block content %}
-
 <h1 class="titulo-profesores">Listado de Profesores</h1>
-
 <div class="buscador-crear-container">
-
 <p class="crear-curso">  
     <a href="{% url 'crear_profesor' %}" class="btn-crear">Crear nuevo profesor</a>
 </p>
-
 </div>
-
 <div class="contenedor-profesores">
-
 {% if profesores %}
     <div class="grid-profesores">
         {% for prof in profesores %}
             <div class="profesor-card">
-                
                 <div class="profesor-icono">
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
-
                 <h3>{{ prof.nombre }} {{ prof.apellido }}</h3>
-
                 <p class="especialidad-profesor">
                     <strong>Especialidad:</strong> {{ prof.especialidad }}
                 </p>
-
                 {% if prof.cursos.exists %}
                     <p class="cursos-profesor">
                         <strong>Cursos a cargo:</strong> 
@@ -39,19 +27,15 @@
                         {% endfor %}
                     </p>
                 {% endif %}
-
                 <div class="profesor-actions">
                     <a href="{% url 'editar_profesor' prof.id %}" class="btn-edit">Editar</a>
                     <a href="{% url 'borrar_profesor' prof.id %}" class="btn-delete">Borrar</a>
                 </div>
-
             </div>
         {% endfor %}
     </div>
 {% else %}
     <p class="text-muted mt-4 text-center">Todavía no hay profesores cargados en el sistema.</p>
 {% endif %}
-
 </div>
-
 {% endblock content %}

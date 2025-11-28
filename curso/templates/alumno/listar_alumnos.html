@@ -1,47 +1,33 @@
 {% extends "base.html" %}
-
 {% block title %}Listado de Alumnos{% endblock title %}
-
 {% block content %}
-
 <h1 class="titulo-alumnos">Listado de Alumnos</h1>
-
 <div class="buscador-crear-container">
-
     <p class="crear-curso">  
         <a href="{% url 'crear_alumno' %}" class="btn-crear">Crear nuevo alumno</a>
     </p>
 </div>
-
 <div class="contenedor-alumnos">
-
     {% if alumnos %}
         <div class="grid-alumnos">
             {% for alumno in alumnos %}
                 <div class="alumno-card">
-                    
                     <div class="alumno-icono">
                         <i class="fas fa-user"></i>
                     </div>
-
                     <h3>{{ alumno.nombre }} {{ alumno.apellido }}</h3>
-
                     <p class="email-alumno">
                         <strong>Email:</strong> {{ alumno.email }}
                     </p>
-
                     <div class="alumno-actions">
                         <a href="{% url 'editar_alumno' alumno.id %}" class="btn-edit">Editar</a>
                         <a href="{% url 'borrar_alumno' alumno.id %}" class="btn-delete">Borrar</a>
                     </div>
-
                 </div>
             {% endfor %}
         </div>
     {% else %}
         <p class="text-muted mt-4 text-center">Todavía no hay alumnos cargados en el sistema.</p>
     {% endif %}
-
 </div>
-
 {% endblock content %}

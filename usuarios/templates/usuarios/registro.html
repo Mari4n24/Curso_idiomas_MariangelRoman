@@ -1,19 +1,13 @@
 {% extends "base.html" %}
-
 {% block title %}Registro{% endblock title %}
-
 {% block content %}
-
 <div class="register-container">
     <div class="register-box">
-
         <h1 class="title">Crear una cuenta</h1>
         <p class="subtitle">Regístrate y empieza a dominar nuevos idiomas</p>
-
         <form method="post">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ request.GET.next }}">
-
             {% for field in form %}
                 <div class="form-group">
                     <label>{{ field.label }}</label>
@@ -26,16 +20,12 @@
                     {% endfor %}
                 </div>
             {% endfor %}
-
             <button type="submit" class="btn-register">Registrarme</button>
         </form>
-
         <p class="login-text">
             ¿Ya tenés cuenta?
             <a href="{% url 'login' %}">Iniciar sesión</a>
         </p>
-
     </div>
 </div>
-
 {% endblock content %}

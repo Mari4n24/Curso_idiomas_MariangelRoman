@@ -1,55 +1,38 @@
 {% extends "base.html" %}
-
 {% block title %}Listado de Cursos{% endblock title %}
-
 {% block content %}
-
 <h1 class="titulo-cursos">Listado de Cursos</h1>
-
 <div class="buscador-crear-container">
     <form action="" method="get" class="buscador-cursos">
         <input type="text" name="buscar" placeholder="Buscar curso" value="{{ request.GET.buscar|default:'' }}">
         <button type="submit">Buscar</button>
     </form>
-
     <p class="crear-curso">
         <a href="{% url 'crear_curso' %}" class="btn-crear">Crear nuevo curso</a>
     </p>
 </div>
-
 <div class="courses-container">
-
     {% if cursos %}
         {% for curso in cursos %}
-        
             <div class="course-card">
-
                 <a href="{% url 'detalle_curso' curso.id %}">
                     <h3>{{ curso.nombre }}</h3>
                 </a>
-
                 <p class="curso-info">
                     {{ curso.idioma }} — Nivel: {{ curso.nivel }}
                 </p>
-
                 {% if curso.imagen %}
-                
                     <img src="{{ curso.imagen.url }}" alt="Imagen del curso">
                 {% endif %}
-
-            
                 <div class="course-actions">
                     <a href="{% url "detalle_curso" curso.id %}" class="btn-detail">Detalle</a>
                     <a href="{% url 'editar_curso' curso.id %}" class="btn-edit">Editar</a>
                     <a href="{% url 'borrar_curso' curso.id %}" class="btn-delete">Borrar</a>
                 </div>
-
             </div>
         {% endfor %}
-
     {% else %}
         <p class="no-cursos">No hay cursos cargados.</p>
     {% endif %}
 </div>
-
 {% endblock content %}

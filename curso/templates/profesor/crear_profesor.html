@@ -1,11 +1,7 @@
 {% extends "base.html" %}
-
 {% block title %}Crear Profesor{% endblock title %}
-
 {% block content %}
-
 <h1>Crear profesor</h1>
-
 <h2 class="titulo-profesores" >Crear Profesor</h2>
 <div class="form-profesor">
     <form method="post">
@@ -14,7 +10,5 @@
         <button type="submit" class="btn-guardar-profesor">Crear Profesor</button>
     </form>
 </div>
-
 <a href="{% url "listar_profesores" %}"></a>
-
 {% endblock content %}

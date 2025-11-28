@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 <h1>Crear Alumno</h1>
-
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     Nombre: <input type="text" name="nombre"><br>
@@ -11,7 +8,5 @@
     Email: <input type="text" name="email"><br>
     <input type="submit" value="Crear Alumno">
 </form>
-
 <a href="{% url 'listar_alumnos' %}">Volver al listado</a>
-
 {% endblock content %}
