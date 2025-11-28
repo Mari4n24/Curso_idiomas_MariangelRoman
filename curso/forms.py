@@ -15,12 +15,12 @@ class CursoForm(forms.ModelForm):
 class AlumnoForm(forms.ModelForm):
     class Meta:
         model = Alumno
-        fields = ['nombre', 'apellido', 'email', 'imagen']
+        fields = ['nombre', 'apellido', 'email']
 
 class ProfesorForm(forms.ModelForm):
     class Meta:
         model = Profesor
-        fields = ['nombre', 'especialidad', 'cursos', 'imagen']
+        fields = ['nombre', 'especialidad', 'cursos']
         widgets = {
             'cursos': forms.CheckboxSelectMultiple(),
         }

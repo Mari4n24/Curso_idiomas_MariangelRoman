@@ -57,7 +57,7 @@ def listar_alumnos(request):
 @login_required
 def crear_alumno(request):
     if request.method == 'POST':
-        form = AlumnoForm(request.POST, request.FILES)
+        form = AlumnoForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('listar_alumnos')
@@ -99,7 +99,7 @@ def listar_profesores(request):
 @login_required
 def crear_profesor(request):
     if request.method == 'POST':
-        form = ProfesorForm(request.POST, request.FILES)
+        form = ProfesorForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('listar_profesores')
